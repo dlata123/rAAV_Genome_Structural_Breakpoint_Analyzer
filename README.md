@@ -3,6 +3,7 @@
 This repository contains a workflow to analyze AAV genome structures from long-read sequencing data (PacBio). The focus is on identifying snapback breakpoint regions and evaluating whether these regions are associated with local secondary structure using RNAfold (minimum free energy, MFE).
 This workflow is based on approaches described in:
 "Structural Analysis of Recombinant AAV Vector Genomes at Single-Molecule Resolution"
+This workflow can be run either through the provided notebooks or using the standalone Python scripts in the `scripts/` directory.
 
 ---
 
