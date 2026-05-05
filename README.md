@@ -27,19 +27,24 @@ Subparser outputs for snapback and truncation (`*.tile.zmw.counts`) are used as 
 - generates summary tables and plots
 
 ## Repository structure
+## Repository structure
+
 data/
-example.snapback.tile.zmw.counts
-reference_split.fa
+  example.snapback.tile.zmw.counts   (input: subparser output for snapback)
+  reference_split.fa
 
 notebooks/
-snapback_analysis.ipynb
-truncation_analysis.ipynb
+  snapback_analysis.ipynb
+  truncation_analysis.ipynb
 
 results/
-(example outputs)
+  (example outputs generated from snapback analysis)
+
+scripts/
+  snapback_rnafold_pipeline.py
+  truncation_rnafold_pipeline.py
 
 README.md
-
 
 ---
 
