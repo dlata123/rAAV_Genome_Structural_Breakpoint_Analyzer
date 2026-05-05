@@ -38,7 +38,7 @@ notebooks/
   truncation_analysis.ipynb
 
 results/
-  (example outputs generated from snapback analysis)
+  (example outputs generated from snapback data file)
 
 scripts/
   snapback_rnafold_pipeline.py
