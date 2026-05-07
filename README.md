@@ -123,7 +123,7 @@ breakpoint distribution plots
 # Running other datasets
 
 The notebooks and scripts are not limited to the example files included in this repository.
-They can also be run on other snapback or truncation subparser output files (`*.tile.zmw.counts`) generated from different  datasets by simply updating the input tile file and reference FASTA paths and in some case regex.
+They can also be run on other snapback or truncation subparser output files (`*.tile.zmw.counts`) generated from different  datasets by simply updating the input tile file, reference FASTA paths and regex patterns as needed.
 
 Author
 Dimpal Lata
