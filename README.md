@@ -67,9 +67,10 @@ RNAfold must be installed and available in PATH.
 
 which RNAfold
 RNAfold --version
-## How to run
-## Option 1: Run notebooks
 
+## How to run
+
+## Option 1: Run notebooks
 Update paths near the top of the notebook:
 
 from pathlib import Path
@@ -83,7 +84,6 @@ OUTPUT_FOLDER = PROJECT_DIR / "results"
 Then run the notebook step-by-step.
 
 ## Option 2: Run Python scripts
-
 Example:
 python scripts/snapback_rnafold_pipeline.py
 or
