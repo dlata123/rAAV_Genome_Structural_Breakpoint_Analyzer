@@ -47,13 +47,9 @@ scripts/
 └── truncation_rnafold_pipeline.py
 
 README.md
-
 License
-
 Citation.cff
-
 requirement.txt
-
 .gitignore
 
 ## Requirements
