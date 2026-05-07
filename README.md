@@ -1,104 +1,122 @@
 [![DOI](https://zenodo.org/badge/1230053574.svg)](https://doi.org/10.5281/zenodo.20072386)
-# rAAV Genome Structural-Breakpoint Analysis (Snapback + RNAfold)
+# rAAV Genome Structural Breakpoint Analysis (Snapback + Truncation + RNAfold)
 
-This repository contains a workflow to analyze AAV genome structures from long-read sequencing data (PacBio). The focus is on identifying snapback breakpoint regions and evaluating whether these regions are associated with local secondary structure using RNAfold (minimum free energy, MFE).
-This workflow is based on approaches described in:
-"Structural Analysis of Recombinant AAV Vector Genomes at Single-Molecule Resolution"
-This workflow can be run either through the provided notebooks or using the standalone Python scripts in the `scripts/` directory.
+This repository contains workflows to analyze recombinant AAV (rAAV) genome structures from long-read sequencing data (PacBio). The workflows focus on identifying snapback and truncation breakpoint regions and evaluating whether these regions are associated with local secondary structure using RNAfold (minimum free energy, MFE).
+This workflow is based on approaches described in: "Structural Analysis of Recombinant AAV Vector Genomes at Single-Molecule Resolution"
+The analysis can be run either through the provided notebooks or using the standalone Python scripts in the `scripts/` directory.
 
 ---
 
-## Background
-AAV genomes produced during manufacturing are often heterogeneous. Along with full-length genomes, truncated forms, snapback structures, and other rearrangements are commonly observed.
-With long-read sequencing, these structures can be resolved at the single-molecule level. To interpret them, tiling and subparser steps are used.
-The tiling algorithm aligns each read to reference components (e.g., ITRs and payload) and breaks it into ordered segments.  
-The subparser then simplifies these patterns and extracts breakpoint positions and counts.
+# Background
+AAV genomes produced during manufacturing are often heterogeneous. Along with full-length genomes, truncated forms, snapback structures, and other rearrangements are commonly observed. With long-read sequencing, these structures can be resolved at the single-molecule level. To interpret them, tiling and subparser steps are used.
+The tiling algorithm aligns each read to reference components (e.g., ITRs and payload) and breaks the read into ordered segments [https://www.biorxiv.org/content/10.1101/2025.07.25.666743.abstract]. The subparser then simplifies these patterns and extracts breakpoint positions and counts.
 Subparser outputs for snapback and truncation (`*.tile.zmw.counts`) are used as input for this workflow.
 
 ---
 
-## What this workflow does
-- reads tile count data  
-- extracts breakpoint positions in the payload  
-- separates plus (coding) and minus (non-coding) strand events  
-- generates sequence windows around breakpoints  
-- runs RNAfold for secondary structure prediction  
-- extracts MFE values  
-- combines MFE with breakpoint frequency  
-- performs statistical analysis  
+# What this workflow does
+- reads tile count data
+- extracts breakpoint positions in the payload
+- separates plus (coding) and minus (non-coding) strand events
+- generates sequence windows around breakpoints
+- runs RNAfold for secondary structure prediction
+- extracts MFE values
+- combines MFE with breakpoint frequency
+- performs statistical analysis
 - generates summary tables and plots
 
-## Repository structure
-## Repository structure
+---
 
+# Repository structure
+
+```text
 data/
-  example.snapback.tile.zmw.counts   (input: subparser output for snapback)
-  reference_split.fa
+├── scGFP.snapback.tile.zmw.counts
+├── scGFP.truncated_selfprime.tile.zmw.counts
+├── scGFP_reference.fa
+├── ssGFP.snapback.tile.zmw.counts
+├── ssGFP.truncated_selfprime.tile.zmw.counts
+└── ssGFP_reference.fa
 
 notebooks/
-  snapback_analysis.ipynb
-  truncation_analysis.ipynb
-
-results/
-  (example outputs generated from snapback data file)
+├── snapback_analysis.ipynb
+└── truncation_analysis.ipynb
 
 scripts/
-  snapback_rnafold_pipeline.py
-  truncation_rnafold_pipeline.py
+├── snapback_rnafold_pipeline.py
+└── truncation_rnafold_pipeline.py
 
 README.md
 
----
-
 ## Requirements
-- Python  
-- pandas  
-- numpy  
-- biopython  
-- scipy  
-- RNAfold (ViennaRNA)
+Python 3
+pandas
+numpy
+biopython
+scipy
+matplotlib
+RNAfold (ViennaRNA)
 
 Optional:
-- rpy2  
-- R with ggplot2  
+rpy2
+R with ggplot2
+RNAfold requirement
+RNAfold must be installed and available in PATH.
 
----
+## Check installation using:
 
+which RNAfold
+RNAfold --version
 ## How to run
+## Option 1: Run notebooks
 
-Update paths at the top of the notebook:
+Update paths near the top of the notebook:
 
-```python
 from pathlib import Path
 
 PROJECT_DIR = Path(".")
-INPUT_TILE_FILE = PROJECT_DIR / "data/example.snapback.tile.zmw.counts"
-REFERENCE_FASTA = PROJECT_DIR / "data/reference_split.fa"
+
+INPUT_TILE_FILE = PROJECT_DIR / "data/scGFP.snapback.tile.zmw.counts"
+REFERENCE_FASTA = PROJECT_DIR / "data/scGFP_reference.fa"
 OUTPUT_FOLDER = PROJECT_DIR / "results"
 
-Then run the notebook step by step.
+Then run the notebook step-by-step.
+
+## Option 2: Run Python scripts
+
+Example:
+python scripts/snapback_rnafold_pipeline.py
+or
+python scripts/truncation_rnafold_pipeline.py
+
+Update the paths near the top of each script:
+
+PROJECT_DIR = Path(".")
+
+FILE_REFERENCE_PAIRS = [
+    (
+        PROJECT_DIR / "data/scGFP.snapback.tile.zmw.counts",
+        PROJECT_DIR / "data/scGFP_reference.fa",
+        PROJECT_DIR / "results",
+    ),
+]
 
 ## Output
+Running the workflow generates:
 
-The workflow generates:
-breakpoint tables
+breakpoint summary tables
 RNAfold structure outputs
 MFE values
 combined datasets
-plots showing breakpoint distribution across the payload
-MFE values are used in plots, where more negative values indicate more stable secondary structures.
+nucleotide enrichment analysis
+breakpoint distribution plots
 
 ## Main idea
-This analysis looks at whether snapback and truncation breakpoints occur more often in regions with specific secondary structure properties.
+This analysis tests whether snapback and truncation breakpoints occur more frequently in regions associated with specific local secondary structure properties.
 
 ## Notes
-Reference files are synthetic and provided for demonstration
-RNAfold must be installed and available in PATH
-Only key output files are included here. Full RNAfold structure outputs and intermediate files are not included due to their size, but can be regenerated by running the workflow
+RNAfold structure files (.ps) and large intermediate outputs are not included in the repository because they can be regenerated by running the workflow.
+Output folders are generated automatically during runtime.
 
 Author
 Dimpal Lata
-
----
-
-## Repository structure
