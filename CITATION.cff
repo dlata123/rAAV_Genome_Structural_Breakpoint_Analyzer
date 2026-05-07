@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated manuscript as below."
+authors:
+  - family-names: Rouleau
+    given-names: David
+  - family-names: Lata
+    given-names: Dimpal
+  - family-names: Dollive
+    given-names: Serena
+  - family-names: Bruccoleri
+    given-names: Robert
+  - family-names: Van Lieshout
+    given-names: Laura
+  - family-names: Golebiowski
+    given-names: Diane
+  - family-names: Iwuchukwu
+    given-names: Ify
+title: "rAAV_Structural_Breakpoint_Analyzer"
+version: 1.0.0
+date-released: 2026-05-07
+url: "https://github.com/dlata123/rAAV_Genome_Structural_Breakpoint_Analyzer"
+repository-code: "https://github.com/dlata123/rAAV_Genome_Structural_Breakpoint_Analyzer"
+
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Rouleau
+      given-names: David
+    - family-names: Lata
+      given-names: Dimpal
+    - family-names: Dollive
+      given-names: Serena
+    - family-names: Bruccoleri
+      given-names: Robert
+    - family-names: Van Lieshout
+      given-names: Laura
+    - family-names: Golebiowski
+      given-names: Diane
+    - family-names: Iwuchukwu
+      given-names: Ify
+  doi: "10.64898/2025.12.04.692441"
+  journal: "bioRxiv"
+  title: "Structural Analysis of Recombinant AAV Vector Genomes at Single-Molecule Resolution"
+  year: 2025
