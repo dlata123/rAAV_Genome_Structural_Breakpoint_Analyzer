@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/1230053574.svg)](https://doi.org/10.5281/zenodo.20072386)
 # rAAV Genome Structural-Breakpoint Analysis (Snapback + RNAfold)
 
 This repository contains a workflow to analyze AAV genome structures from long-read sequencing data (PacBio). The focus is on identifying snapback breakpoint regions and evaluating whether these regions are associated with local secondary structure using RNAfold (minimum free energy, MFE).
