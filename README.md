@@ -3,7 +3,7 @@
 
 This repository contains workflows to analyze recombinant AAV (rAAV) genome structures from long-read sequencing data (PacBio). The workflows focus on identifying snapback and truncation breakpoint regions and evaluating whether these regions are associated with local secondary structure using RNAfold (minimum free energy, MFE).
 This workflow is based on approaches described in: "Structural Analysis of Recombinant AAV Vector Genomes at Single-Molecule Resolution"
-The analysis can be run either through the provided notebooks or using the standalone Python scripts in the `scripts/` directory.
+The analysis can be run either through the provided notebooks or using the standalone Python scripts in the `scripts/` directory. 
 
 ---
 
@@ -105,7 +105,6 @@ FILE_REFERENCE_PAIRS = [
     ),
 ]
 
-
 ## Main idea
 This analysis tests whether snapback and truncation breakpoints occur more frequently in regions associated with specific local secondary structure properties.
 
@@ -120,6 +119,11 @@ MFE values
 combined datasets
 nucleotide enrichment analysis
 breakpoint distribution plots
+
+# Running other datasets
+
+The notebooks and scripts are not limited to the example files included in this repository.
+They can also be run on other snapback or truncation subparser output files (`*.tile.zmw.counts`) generated from different  datasets by simply updating the input tile file and reference FASTA paths and in some case regex.
 
 Author
 Dimpal Lata
