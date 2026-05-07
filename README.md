@@ -9,7 +9,7 @@ The analysis can be run either through the provided notebooks or using the stand
 
 # Background
 AAV genomes produced during manufacturing are often heterogeneous. Along with full-length genomes, truncated forms, snapback structures, and other rearrangements are commonly observed. With long-read sequencing, these structures can be resolved at the single-molecule level. To interpret them, tiling and subparser steps are used.
-The tiling algorithm aligns each read to reference components (e.g., ITRs and payload) and breaks the read into ordered segments [The Tiling Algorithm – A general method for structural characterization of accurate long DNA sequence reads: application to AAV genome sequences]. The subparser then simplifies these patterns and extracts breakpoint positions and counts.
+The tiling algorithm aligns each read to reference components (e.g., ITRs and payload) and breaks the read into ordered segments (The Tiling Algorithm – A general method for structural characterization of accurate long DNA sequence reads: application to AAV genome sequences). The subparser then simplifies these patterns and extracts breakpoint positions and counts.
 Subparser outputs for snapback and truncation (`*.tile.zmw.counts`) are used as input for this workflow.
 
 ---
