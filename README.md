@@ -102,14 +102,15 @@ FILE_REFERENCE_PAIRS = [
 ]
 
 ## Output
-Running the workflow generates:
 
+Running the workflow generates:
 breakpoint summary tables
 RNAfold structure outputs
 MFE values
 combined datasets
 nucleotide enrichment analysis
 breakpoint distribution plots
+RNAfold structure files
 
 ## Main idea
 This analysis tests whether snapback and truncation breakpoints occur more frequently in regions associated with specific local secondary structure properties.
