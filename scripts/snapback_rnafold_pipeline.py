@@ -3,7 +3,7 @@
 Snapback breakpoint analysis with RNAfold. 
 
 This script is adapted from my notebook so I can run the full workflow
-from the command line and reuse it easily for multiple samples.
+from the command line.
 
 To run:
     python snapback_rnafold_pipeline_server.py
