@@ -15,7 +15,7 @@ authors:
     given-names: Diane
   - family-names: Iwuchukwu
     given-names: Ify
-title: "rAAV_Structural_Breakpoint_Analyzer"
+title: "rAAV_Genome_Structural_Breakpoint_Analyzer"
 version: 1.0.0
 date-released: 2026-05-07
 url: "https://github.com/dlata123/rAAV_Genome_Structural_Breakpoint_Analyzer"
