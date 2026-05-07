@@ -1,9 +1,0 @@
-Strand,Base,Observed,Expected,StdResidual
-minus,A,1262,966.75,9.512
-minus,C,799,966.75,-5.395
-minus,G,692,966.75,-8.837
-minus,T,1113,966.75,4.72
-plus,A,4,2.375,1.379
-plus,C,1,2.375,-0.892
-plus,G,3,2.375,0.73
-plus,T,0,2.375,-1.217
