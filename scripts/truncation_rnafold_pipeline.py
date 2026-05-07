@@ -3,7 +3,7 @@
 Truncation breakpoint analysis with RNAfold.
 
 This script is adapted from my notebook so I can run the full workflow
-from the command line and reuse it easily for more than one sample.
+from the command line.
 
 To run:
     python truncation_rnafold_pipeline.py
